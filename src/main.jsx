@@ -2,11 +2,14 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root from "./Root";
+import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1>Hello World!</h1>,
+    element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
   },
 ]);
 
