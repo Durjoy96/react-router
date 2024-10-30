@@ -8,6 +8,7 @@ import Root, {
 } from "./routes/Root";
 import ErrorPage from "./ErrorPage";
 import Contact, { loader as contactLoader } from "./routes/contact";
+import EditContact from "./routes/edit";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
         path: "/contacts/:contactId",
         loader: contactLoader,
         element: <Contact></Contact>,
+      },
+      {
+        path: "contacts/:contactId/edit",
+        element: <EditContact />,
+        loader: contactLoader,
       },
     ],
   },
